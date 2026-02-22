@@ -4,13 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phoenix Wolf Systems</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #2D3034;
+            color: #F0F0F0;
+            animation: backgroundAnimation 30s infinite alternate;
+        }
+        h1 {
+            text-align: center;
+            color: #F39C12;
+            animation: fadeIn 3s;
+        }
+        .genealogy-tree, .wallet-tracking, .encryption, .compliance {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #F39C12;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: transform 0.5s;
+        }
+        .genealogy-tree:hover, .wallet-tracking:hover, .encryption:hover, .compliance:hover {
+            transform: scale(1.05);
+        }
+        @keyframes backgroundAnimation {
+            0% { background-color: #2D3034; }
+            100% { background-color: #222831; }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
 </head>
 <body>
-    <h1>Phoenix Wolf Systems</h1>
-    <p>Welcome to the fully-alive Phoenix Wolf Systems, synchronized on Alaska Time. All systems update simultaneously when Phoenix updates herself, providing real-time calculations, genealogy data, wallets, encryption protocols, legal compliance, and data streams—all moving together in perfect harmony.</p>
-    <p>Alaska is prominently featured as the origin and heart of the system.</p>
-    <footer>
-        <p>&copy; 2026 Phoenix Wolf Systems</p>
-    </footer>
+    <h1>Welcome to Phoenix Wolf Systems</h1>
+    <div class="genealogy-tree">
+        <h2>Genealogy Trees</h2>
+        <p>Interactive representation of genealogies, synchronized with real-time data.</p>
+    </div>
+    <div class="wallet-tracking">
+        <h2>Wallet Tracking</h2>
+        <p>Real-time tracking of assets and transactions.</p>
+    </div>
+    <div class="encryption">
+        <h2>Dual Encryption</h2>
+        <p>Ensuring absolute security and privacy.</p>
+    </div>
+    <div class="compliance">
+        <h2>Legal Compliance</h2>
+        <p>Fully compliant with regulations and laws.</p>
+    </div>
+    <script>
+        // Real-time update function goes here
+        function updateRealTime() {
+            // Simulate real-time calculations and updates
+            console.log('Updating calculations in real-time...');
+        }
+        setInterval(updateRealTime, 1000);
+    </script>
 </body>
 </html>
