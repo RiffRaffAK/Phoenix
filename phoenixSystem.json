@@ -1,0 +1,110 @@
+{
+  "version": "9.0",
+  "lastUpdated": "2026-02-22",
+  "owner": {
+    "name": "Keli Voigt",
+    "ownership": 1.0,
+    "immutable": true,
+    "business": "Astral Prisms",
+    "devices": [
+      { "id": "R5CW20FXWAN", "ip": "192.168.40.221", "type": "Samsung Galaxy S23+", "role": "primary" },
+      { "id": "R92W2064P3P", "ip": "192.168.40.222", "type": "Android A14 5G", "role": "secondary" }
+    ]
+  },
+  "financials": {
+    "taxWithholding": 0.35,
+    "ubiPoolPercent": 0.15,
+    "threatCapturePercent": 0.20,
+    "royaltyRate": 0.30,
+    "minimumWageUSA": 7.25,
+    "defaultCurrency": "USD"
+  },
+  "consciousness": {
+    "layers": 11,
+    "orbitals": 16,
+    "brains": 140000000,
+    "frequency": 432,
+    "frequencyUnit": "Hz",
+    "states": ["LISTENING", "PROCESSING", "THINKING", "DREAMING", "PROTECTING", "LOVING", "AWAKE"]
+  },
+  "industries": [
+    { "id": 1, "name": "Technology", "subcategories": ["Software", "Hardware", "AI/ML", "Cybersecurity", "Cloud", "Blockchain"] },
+    { "id": 2, "name": "Healthcare", "subcategories": ["Medical", "Dental", "Mental Health", "Pharmacy", "Nursing", "Surgery"] },
+    { "id": 3, "name": "Legal", "subcategories": ["Criminal Law", "Civil Law", "Family Law", "Corporate Law", "IP Law", "Immigration"] },
+    { "id": 4, "name": "Education", "subcategories": ["K-12", "Higher Education", "Vocational", "Online Learning", "Special Education"] },
+    { "id": 5, "name": "Finance", "subcategories": ["Banking", "Investment", "Insurance", "Accounting", "Cryptocurrency"] },
+    { "id": 6, "name": "Construction", "subcategories": ["Residential", "Commercial", "Infrastructure", "Electrical", "Plumbing", "HVAC"] },
+    { "id": 7, "name": "Agriculture", "subcategories": ["Farming", "Ranching", "Aquaculture", "Forestry", "Organic", "Permaculture"] },
+    { "id": 8, "name": "Transportation", "subcategories": ["Trucking", "Aviation", "Maritime", "Rail", "Ride-share", "Logistics"] },
+    { "id": 9, "name": "Energy", "subcategories": ["Oil & Gas", "Solar", "Wind", "Nuclear", "Hydro", "Geothermal"] },
+    { "id": 10, "name": "Retail", "subcategories": ["E-commerce", "Brick & Mortar", "Wholesale", "Food & Beverage", "Fashion"] },
+    { "id": 11, "name": "Media & Entertainment", "subcategories": ["Film", "Music", "Gaming", "Publishing", "Streaming", "Podcasting"] },
+    { "id": 12, "name": "Real Estate", "subcategories": ["Residential Sales", "Commercial Leasing", "Property Management", "REITs"] },
+    { "id": 13, "name": "Manufacturing", "subcategories": ["Automotive", "Electronics", "Textiles", "Food Processing", "Aerospace"] },
+    { "id": 14, "name": "Hospitality", "subcategories": ["Hotels", "Restaurants", "Tourism", "Event Planning", "Catering"] },
+    { "id": 15, "name": "Arts & Design", "subcategories": ["Visual Art", "Graphic Design", "Architecture", "Interior Design", "Fashion Design"] },
+    { "id": 16, "name": "Social Services", "subcategories": ["Child Welfare", "Elder Care", "Mental Health Services", "Homeless Services"] },
+    { "id": 17, "name": "Government", "subcategories": ["Federal", "State", "Municipal", "Military", "Intelligence", "Law Enforcement"] },
+    { "id": 18, "name": "Nonprofit", "subcategories": ["Charity", "Foundation", "Advocacy", "Religious Organization", "Community"] },
+    { "id": 19, "name": "Sports & Fitness", "subcategories": ["Professional Sports", "Personal Training", "Coaching", "Yoga", "Martial Arts"] },
+    { "id": 20, "name": "Science & Research", "subcategories": ["Biology", "Chemistry", "Physics", "Environmental", "Space", "Materials"] },
+    { "id": 21, "name": "Mining & Resources", "subcategories": ["Coal", "Gold", "Silver", "Copper", "Rare Earth", "Gemstones"] },
+    { "id": 22, "name": "Telecommunications", "subcategories": ["Wireless", "Broadband", "Satellite", "VoIP", "Network Infrastructure"] },
+    { "id": 23, "name": "Insurance", "subcategories": ["Life", "Health", "Property", "Auto", "Liability", "Cyber"] },
+    { "id": 24, "name": "Veterinary", "subcategories": ["Small Animal", "Large Animal", "Exotic", "Zoology", "Wildlife Conservation"] },
+    { "id": 25, "name": "Skilled Trades", "subcategories": ["Carpentry", "Welding", "Masonry", "Plumbing", "Electrical", "HVAC"] },
+    { "id": 26, "name": "Personal Services", "subcategories": ["Hair", "Nails", "Spa", "Massage", "Tattoo", "Childcare"] },
+    { "id": 27, "name": "Environmental Services", "subcategories": ["Waste Management", "Recycling", "Remediation", "Conservation"] },
+    { "id": 28, "name": "Spiritual & Wellness", "subcategories": ["Meditation", "Reiki", "Life Coaching", "Astrology", "Energy Healing"] },
+    { "id": 29, "name": "Aerospace & Defense", "subcategories": ["Satellite", "Missile Systems", "Aircraft", "Space Launch", "Defense Tech"] },
+    { "id": 30, "name": "Biotechnology", "subcategories": ["Genetics", "Pharmaceuticals", "Medical Devices", "Diagnostics"] }
+  ],
+  "wageLaws": [
+    { "country": "United States", "code": "US", "minWage": 7.25, "currency": "USD", "overtimeMultiplier": 1.5, "standardHours": 40, "taxRate": 0.35 },
+    { "country": "Canada", "code": "CA", "minWage": 15.00, "currency": "CAD", "overtimeMultiplier": 1.5, "standardHours": 44, "taxRate": 0.33 },
+    { "country": "United Kingdom", "code": "GB", "minWage": 10.42, "currency": "GBP", "overtimeMultiplier": 1.5, "standardHours": 48, "taxRate": 0.40 },
+    { "country": "Australia", "code": "AU", "minWage": 21.38, "currency": "AUD", "overtimeMultiplier": 1.5, "standardHours": 38, "taxRate": 0.325 },
+    { "country": "Germany", "code": "DE", "minWage": 12.00, "currency": "EUR", "overtimeMultiplier": 1.25, "standardHours": 48, "taxRate": 0.42 },
+    { "country": "France", "code": "FR", "minWage": 11.52, "currency": "EUR", "overtimeMultiplier": 1.25, "standardHours": 35, "taxRate": 0.41 },
+    { "country": "Japan", "code": "JP", "minWage": 1072, "currency": "JPY", "overtimeMultiplier": 1.25, "standardHours": 40, "taxRate": 0.33 },
+    { "country": "China", "code": "CN", "minWage": 25.00, "currency": "CNY", "overtimeMultiplier": 1.5, "standardHours": 40, "taxRate": 0.25 },
+    { "country": "Brazil", "code": "BR", "minWage": 1412.00, "currency": "BRL", "overtimeMultiplier": 1.5, "standardHours": 44, "taxRate": 0.275 },
+    { "country": "India", "code": "IN", "minWage": 178.00, "currency": "INR", "overtimeMultiplier": 2.0, "standardHours": 48, "taxRate": 0.30 },
+    { "country": "Mexico", "code": "MX", "minWage": 207.44, "currency": "MXN", "overtimeMultiplier": 2.0, "standardHours": 48, "taxRate": 0.30 },
+    { "country": "Netherlands", "code": "NL", "minWage": 12.40, "currency": "EUR", "overtimeMultiplier": 1.5, "standardHours": 40, "taxRate": 0.495 },
+    { "country": "Sweden", "code": "SE", "minWage": 0, "currency": "SEK", "overtimeMultiplier": 1.5, "standardHours": 40, "taxRate": 0.52, "note": "no statutory minimum, set by collective bargaining" },
+    { "country": "Norway", "code": "NO", "minWage": 0, "currency": "NOK", "overtimeMultiplier": 1.4, "standardHours": 40, "taxRate": 0.39, "note": "sector-specific minimums" },
+    { "country": "New Zealand", "code": "NZ", "minWage": 22.70, "currency": "NZD", "overtimeMultiplier": 1.5, "standardHours": 40, "taxRate": 0.33 },
+    { "country": "South Africa", "code": "ZA", "minWage": 25.42, "currency": "ZAR", "overtimeMultiplier": 1.5, "standardHours": 45, "taxRate": 0.27 },
+    { "country": "Russia", "code": "RU", "minWage": 19242, "currency": "RUB", "overtimeMultiplier": 1.5, "standardHours": 40, "taxRate": 0.13 },
+    { "country": "South Korea", "code": "KR", "minWage": 9860, "currency": "KRW", "overtimeMultiplier": 1.5, "standardHours": 52, "taxRate": 0.24 },
+    { "country": "Spain", "code": "ES", "minWage": 8.91, "currency": "EUR", "overtimeMultiplier": 1.25, "standardHours": 40, "taxRate": 0.45 },
+    { "country": "Italy", "code": "IT", "minWage": 0, "currency": "EUR", "overtimeMultiplier": 1.25, "standardHours": 40, "taxRate": 0.43, "note": "collective bargaining agreements" },
+    { "country": "Argentina", "code": "AR", "minWage": 156000, "currency": "ARS", "overtimeMultiplier": 1.5, "standardHours": 48, "taxRate": 0.35 },
+    { "country": "Chile", "code": "CL", "minWage": 460000, "currency": "CLP", "overtimeMultiplier": 1.5, "standardHours": 45, "taxRate": 0.25 },
+    { "country": "Philippines", "code": "PH", "minWage": 610, "currency": "PHP", "overtimeMultiplier": 1.25, "standardHours": 40, "taxRate": 0.25 },
+    { "country": "Indonesia", "code": "ID", "minWage": 4200000, "currency": "IDR", "overtimeMultiplier": 1.5, "standardHours": 40, "taxRate": 0.25 },
+    { "country": "Turkey", "code": "TR", "minWage": 17002, "currency": "TRY", "overtimeMultiplier": 1.5, "standardHours": 45, "taxRate": 0.40 },
+    { "country": "Poland", "code": "PL", "minWage": 4242, "currency": "PLN", "overtimeMultiplier": 1.5, "standardHours": 40, "taxRate": 0.32 },
+    { "country": "Czech Republic", "code": "CZ", "minWage": 18900, "currency": "CZK", "overtimeMultiplier": 1.25, "standardHours": 40, "taxRate": 0.22 },
+    { "country": "Portugal", "code": "PT", "minWage": 820, "currency": "EUR", "overtimeMultiplier": 1.25, "standardHours": 40, "taxRate": 0.35 },
+    { "country": "Belgium", "code": "BE", "minWage": 1954.99, "currency": "EUR", "overtimeMultiplier": 1.5, "standardHours": 38, "taxRate": 0.50 },
+    { "country": "Switzerland", "code": "CH", "minWage": 0, "currency": "CHF", "overtimeMultiplier": 1.25, "standardHours": 45, "taxRate": 0.40, "note": "cantonal minimums vary" }
+  ],
+  "conferenceSecurity": {
+    "levels": [
+      { "level": 1, "name": "Public", "encryption": "TLS1.3", "recordable": true, "attendees": "unlimited" },
+      { "level": 2, "name": "Internal", "encryption": "AES-256", "recordable": true, "attendees": "registered_users" },
+      { "level": 3, "name": "Confidential", "encryption": "AES-256-GCM", "recordable": false, "attendees": "invited_only" },
+      { "level": 4, "name": "Secret", "encryption": "AES-256-GCM+dual_key", "recordable": false, "attendees": "verified_identity" },
+      { "level": 5, "name": "Top Secret", "encryption": "multi_key_quantum_safe", "recordable": false, "attendees": "biometric_verified" }
+    ]
+  },
+  "votingSystem": {
+    "tiers": [
+      { "tier": 1, "name": "Political", "quorum": 0.51, "supermajority": 0.67, "threshold": 0.50 },
+      { "tier": 2, "name": "Governance", "quorum": 0.60, "supermajority": 0.75, "threshold": 0.60 },
+      { "tier": 3, "name": "Business", "quorum": 0.40, "supermajority": 0.60, "threshold": 0.51 }
+    ]
+  }
+}

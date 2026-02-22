@@ -1,0 +1,205 @@
+{
+  "version": "9.0",
+  "lastUpdated": "2026-02-22",
+  "detectionPrecision": "8_microseconds",
+  "threatSignatures": [
+    {
+      "id": "T001",
+      "type": "ransomware",
+      "name": "CryptoLocker Variant",
+      "signatures": ["encrypt_files_recursive", "delete_shadow_copies", "ransom_note_create", "bitcoin_wallet_contact"],
+      "bytePatterns": ["4D5A9000", "E8000000004B"],
+      "behaviorPatterns": ["rapid_file_encryption", "registry_persistence", "c2_beacon"],
+      "severity": "critical",
+      "responseAction": "isolate_and_terminate",
+      "monetaryValue": 2500
+    },
+    {
+      "id": "T002",
+      "type": "ransomware",
+      "name": "WannaCry Variant",
+      "signatures": ["smb_exploit_ms17-010", "wcry_extension", "tasksche_exe", "mssecsvc_exe"],
+      "bytePatterns": ["ED1A3C58", "BADFCA57"],
+      "behaviorPatterns": ["lateral_movement", "port_445_scan", "key_exchange_server"],
+      "severity": "critical",
+      "responseAction": "network_isolation",
+      "monetaryValue": 3000
+    },
+    {
+      "id": "T003",
+      "type": "injection",
+      "name": "SQL Injection",
+      "signatures": ["UNION SELECT", "DROP TABLE", "1=1--", "'; EXEC", "xp_cmdshell"],
+      "behaviorPatterns": ["anomalous_query_length", "special_char_flood", "error_probing"],
+      "severity": "high",
+      "responseAction": "block_and_sanitize",
+      "monetaryValue": 500
+    },
+    {
+      "id": "T004",
+      "type": "injection",
+      "name": "XSS Injection",
+      "signatures": ["<script>", "javascript:", "onerror=", "onload=", "eval(", "document.cookie"],
+      "behaviorPatterns": ["dom_manipulation", "cookie_harvest", "session_theft"],
+      "severity": "high",
+      "responseAction": "sanitize_and_block",
+      "monetaryValue": 400
+    },
+    {
+      "id": "T005",
+      "type": "injection",
+      "name": "Command Injection",
+      "signatures": ["; ls", "| cat /etc/passwd", "`id`", "$(whoami)", "&& net user"],
+      "behaviorPatterns": ["shell_spawn", "privilege_escalation_attempt", "system_info_harvest"],
+      "severity": "critical",
+      "responseAction": "terminate_session",
+      "monetaryValue": 1000
+    },
+    {
+      "id": "T006",
+      "type": "rootkit",
+      "name": "Kernel Rootkit",
+      "signatures": ["syscall_hook", "dkom_technique", "interrupt_descriptor_table_hook"],
+      "behaviorPatterns": ["hide_process", "hide_file", "network_intercept", "keylog"],
+      "severity": "critical",
+      "responseAction": "full_system_scan",
+      "monetaryValue": 5000
+    },
+    {
+      "id": "T007",
+      "type": "rootkit",
+      "name": "Bootkit",
+      "signatures": ["mbr_modification", "vbr_modification", "boot_sector_write"],
+      "behaviorPatterns": ["pre_os_load", "persistence_mechanism", "anti_forensic"],
+      "severity": "critical",
+      "responseAction": "boot_recovery",
+      "monetaryValue": 4000
+    },
+    {
+      "id": "T008",
+      "type": "worm",
+      "name": "Network Worm",
+      "signatures": ["self_replicate_network", "port_scan_rapid", "vulnerability_exploit_auto"],
+      "behaviorPatterns": ["mass_propagation", "bandwidth_saturation", "payload_delivery"],
+      "severity": "high",
+      "responseAction": "network_quarantine",
+      "monetaryValue": 1500
+    },
+    {
+      "id": "T009",
+      "type": "worm",
+      "name": "Email Worm",
+      "signatures": ["mass_email_send", "address_book_harvest", "attachment_malicious"],
+      "behaviorPatterns": ["contact_list_access", "smtp_flood", "social_engineering"],
+      "severity": "medium",
+      "responseAction": "block_outbound_email",
+      "monetaryValue": 300
+    },
+    {
+      "id": "T010",
+      "type": "adware",
+      "name": "Browser Hijacker",
+      "signatures": ["home_page_modify", "search_redirect", "toolbar_install_unauthorized"],
+      "behaviorPatterns": ["browser_setting_change", "ad_injection", "tracking_pixel"],
+      "severity": "medium",
+      "responseAction": "browser_reset",
+      "monetaryValue": 150
+    },
+    {
+      "id": "T011",
+      "type": "adware",
+      "name": "Pop-up Adware",
+      "signatures": ["popup_spawn_loop", "click_fraud_bot", "fake_alert_generate"],
+      "behaviorPatterns": ["dom_injection", "fake_scan_popup", "scareware_display"],
+      "severity": "low",
+      "responseAction": "process_terminate",
+      "monetaryValue": 50
+    },
+    {
+      "id": "T012",
+      "type": "malware",
+      "name": "Keylogger",
+      "signatures": ["keystroke_capture", "clipboard_monitor", "screenshot_interval"],
+      "behaviorPatterns": ["input_hook_api", "data_exfil_encrypted", "c2_send_credentials"],
+      "severity": "high",
+      "responseAction": "terminate_and_clean",
+      "monetaryValue": 800
+    },
+    {
+      "id": "T013",
+      "type": "malware",
+      "name": "Spyware",
+      "signatures": ["webcam_access_unauthorized", "microphone_access_unauthorized", "gps_track"],
+      "behaviorPatterns": ["background_recording", "data_aggregation", "identity_theft"],
+      "severity": "high",
+      "responseAction": "full_removal",
+      "monetaryValue": 1200
+    },
+    {
+      "id": "T014",
+      "type": "malware",
+      "name": "Trojan",
+      "signatures": ["legitimate_software_impersonation", "backdoor_install", "remote_access_tool"],
+      "behaviorPatterns": ["disguised_execution", "persistence_registry", "reverse_shell"],
+      "severity": "high",
+      "responseAction": "quarantine_and_analyze",
+      "monetaryValue": 2000
+    },
+    {
+      "id": "T015",
+      "type": "malware",
+      "name": "Cryptominer",
+      "signatures": ["cpu_max_utilization", "mining_pool_connect", "stratum_protocol"],
+      "behaviorPatterns": ["resource_drain", "gpu_exploit", "covert_mining"],
+      "severity": "medium",
+      "responseAction": "process_kill",
+      "monetaryValue": 200
+    },
+    {
+      "id": "T016",
+      "type": "ddos",
+      "name": "DDoS Attack",
+      "signatures": ["syn_flood", "udp_flood", "http_flood", "slowloris"],
+      "behaviorPatterns": ["traffic_amplification", "botnet_coordination", "service_saturation"],
+      "severity": "high",
+      "responseAction": "traffic_filter_activate",
+      "monetaryValue": 3500
+    },
+    {
+      "id": "T017",
+      "type": "phishing",
+      "name": "Spear Phishing",
+      "signatures": ["domain_spoofing", "lookalike_domain", "credential_harvest_form"],
+      "behaviorPatterns": ["social_engineering", "urgency_manipulation", "authority_impersonation"],
+      "severity": "high",
+      "responseAction": "domain_block",
+      "monetaryValue": 700
+    },
+    {
+      "id": "T018",
+      "type": "zero-day",
+      "name": "Zero-Day Exploit",
+      "signatures": ["unknown_cve", "heap_spray", "ret2libc", "rop_chain"],
+      "behaviorPatterns": ["novel_attack_vector", "no_signature_match", "anomalous_behavior"],
+      "severity": "critical",
+      "responseAction": "heuristic_block",
+      "monetaryValue": 10000
+    }
+  ],
+  "detectionEngine": {
+    "method": "signature_plus_heuristic",
+    "precision": "8_microseconds",
+    "scanInterval": 8,
+    "scanIntervalUnit": "microseconds",
+    "mlModel": "behavioral_analysis_v3",
+    "falsePositiveRate": 0.001,
+    "truePositiveRate": 0.9997
+  },
+  "responseProtocol": {
+    "isolate_and_terminate": { "steps": ["network_isolation", "process_kill", "quarantine_files", "alert_owner"], "timeMs": 8 },
+    "network_isolation": { "steps": ["block_all_outbound", "block_all_inbound", "preserve_forensics"], "timeMs": 5 },
+    "block_and_sanitize": { "steps": ["block_request", "sanitize_input", "log_attempt", "increment_counter"], "timeMs": 1 },
+    "terminate_session": { "steps": ["revoke_token", "close_connection", "ban_ip_temporary"], "timeMs": 2 },
+    "quarantine_and_analyze": { "steps": ["move_to_quarantine", "sandbox_analysis", "report_generate"], "timeMs": 50 }
+  }
+}
