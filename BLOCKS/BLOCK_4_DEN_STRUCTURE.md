@@ -1,43 +1,95 @@
-# Den Structure
+# Block 4 — DEN Structure
+**Phoenix Wolf Systems | Version 3.0.0 | Astral Prisms LLC**
 
-## Introduction
-The den structure is a crucial aspect of household management. It encompasses the organization of living spaces tailored to different household types, ensuring functionality, comfort, and a sense of belonging.
+---
 
-## Household Management
-Managing a household involves coordinating various aspects of daily life, including budgeting, maintenance, and scheduling. Effective household management results in a more harmonious living experience.
+## Overview
 
-## Single Person Dens
-Single person dens are designed to cater to individuals living alone. Key features include:
-- Compact living spaces
-- Versatile furniture arrangements
-- Efficient use of space for storage and functionality
+The DEN (Domestic Economic Node) is the fundamental organizational unit of Phoenix Wolf Systems. Every person belongs to a DEN. DENs define economic, social, and governance relationships.
 
-### Status Tracking
-Tracking personal goals and tasks is essential in a single-person den, helping individuals maintain their independence while managing their responsibilities effectively.
+---
 
-## Married Couple Dens
-Married couple dens focus on shared spaces that foster communication and bonding. Important features include:
-- Shared storage solutions
-- Comfortable communal areas
-- Balanced personal spaces for each partner
+## DEN Types
 
-### Status Tracking
-Monitoring joint goals and household tasks plays a crucial role in maintaining harmony and sharing responsibilities in a married couple den.
+### Single DEN — Individual
+- 1 adult, full financial autonomy
+- Community voting rights
+- Individual UBI receipt
+- CAVE creation rights
 
-## Divorced Dens
-Dens for divorced individuals often require additional considerations for emotional and physical well-being. Features might include:
-- Temporary living arrangements
-- Personal zones for reflection
-- Practical spaces for managing separate lives
+### Married DEN — Couple
+- 2 adults, optional joint finances
+- Shared or separate wallets
+- Enhanced voting weight (1.5x)
+- Automatic divorce DEN conversion option
 
-### Status Tracking
-Effectively tracking new routines and responsibilities can help divorced individuals adapt to their situations and promote stability.
+### Divorced DEN — Separated Family
+- Split custody enforcement
+- Cross-DEN child access
+- Independent finances enforced
+- Court-order compliance automation
 
-## Related Features
-Creating a den structure involves thoughtful consideration of:
-- Space utilization
-- Comfort and style preferences
-- Maintenance ease
+### Family DEN — Full Unit
+- 1-4 adults + children
+- Head of Household role (elected)
+- Parental control system
+- Family voting system
 
-## Conclusion
-Understanding various den structures and their respective management styles allows individuals and families to create harmonious living environments that fit their unique needs and lifestyles.
+---
+
+## DEN Hierarchy
+
+```
+Family DEN
+    │
+    ├── Head of Household (elected adult)
+    ├── Co-Head (optional second adult)
+    ├── Adult Members (equal rights)
+    ├── Young Adults 18-25 (partial autonomy)
+    ├── Minors 13-17 (supervised)
+    └── Children under 13 (maximum protection)
+```
+
+---
+
+## DEN Permissions
+
+| Action | Single | Married | Family Head | Minor | Child |
+|--------|--------|---------|------------|-------|-------|
+| Full financial access | ✅ | ✅ | ✅ | ❌ | ❌ |
+| Create CAVE | ✅ | ✅ | ✅ | ❌ | ❌ |
+| Global vote | ✅ | ✅ | ✅ | ❌ | ❌ |
+| Family vote | N/A | ✅ | ✅ | Limited | ❌ |
+| UBI receipt | ✅ | ✅ | ✅ | Via parent | Via parent |
+| Child management | N/A | Own | ✅ | ❌ | ❌ |
+
+---
+
+## DEN Economic Integration
+
+```javascript
+function getDENEconomics(denId) {
+  const den = getDEN(denId);
+  return {
+    ubiTotal: den.members.reduce((sum, m) => sum + getUBIAmount(m.id), 0),
+    wages: den.members.reduce((sum, m) => sum + getMonthlyWages(m.id), 0),
+    jointBalance: den.wallets.joint?.balance || 0,
+    expenses: getMonthlyExpenses(denId),
+    netPosition: calculateNetPosition(den)
+  };
+}
+```
+
+---
+
+## Community DEN Network
+
+```
+Individual DEN → Neighborhood (10-100 DENs) → Region → Nation → Global
+```
+
+Each level has voting rights and governance mechanisms.
+
+---
+
+*Block 4 — Phoenix Wolf Systems v3.0.0 | Astral Prisms LLC*
