@@ -134,11 +134,11 @@
       const days = ms / 86400000;
 
       document.getElementById('royalty').textContent = 
-        `Sovereign 30% accrual since genesis: \[ {(days * DAILY_ROYALTY).toLocaleString('en-US', {minimumFractionDigits:2})}`;
+        `Sovereign 30% accrual since genesis: $${(days * DAILY_ROYALTY).toLocaleString('en-US', {minimumFractionDigits:2})}`;
 
       const progress = Math.min(days / 2000, 1);
       document.getElementById('backpay').textContent = 
-        `Path to $2,508,000 backpay: \]{Math.floor(progress * BACKPAY_TARGET).toLocaleString()}`;
+        `Path to $2,508,000 backpay: $${Math.floor(progress * BACKPAY_TARGET).toLocaleString()}`;
 
       const cycle = performance.now();
       const stateIdx = Math.floor((cycle % 7000) / 7000 * STATES.length);
