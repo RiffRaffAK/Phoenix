@@ -1,329 +1,421 @@
 # Dysfunctional Rules
 
-## 1. Rule Name
+## 1. Wage Theft
 ### Blocking Logic
-- Description of blocking logic.
+- Detects underpayment relative to agreed contract or applicable minimum wage laws.
 
 ### Detection Function
-- Code or pseudocode for detection.
+```javascript
+function detectWageTheft(agreedWage, actualPaid, hoursWorked) {
+    const expected = agreedWage * hoursWorked;
+    return actualPaid < expected;
+}
+```
 
 ### Real-World Example
-- Description of a real-world scenario demonstrating the rule.
+- An employer pays $8/hour despite a contract specifying $15/hour.
 
 ### Enforcement Mechanism
-- How the rule is enforced.
+- Automatic flag triggers backpay calculation and notifies labor compliance system.
 
 ---
 
-## 2. Rule Name
+## 2. Unauthorized Data Collection
 ### Blocking Logic
-- Description of blocking logic.
+- Blocks collection of user data beyond declared scope in the privacy policy.
 
 ### Detection Function
-- Code or pseudocode for detection.
+```javascript
+function detectUnauthorizedCollection(requestedFields, declaredFields) {
+    return requestedFields.some(field => !declaredFields.includes(field));
+}
+```
 
 ### Real-World Example
-- Description of a real-world scenario demonstrating the rule.
+- An app collects biometric data when the user only consented to location access.
 
 ### Enforcement Mechanism
-- How the rule is enforced.
+- Data request is blocked; incident logged; user notified immediately.
 
 ---
 
-## 3. Rule Name
+## 3. Child Exploitation
 ### Blocking Logic
-- Description of blocking logic.
+- Any content, transaction, or interaction that endangers a minor is immediately terminated.
 
 ### Detection Function
-- Code or pseudocode for detection.
+```javascript
+function detectChildExploitation(content, userAge) {
+    const MINOR_AGE = 18;
+    return userAge < MINOR_AGE && content.flaggedForAdults;
+}
+```
 
 ### Real-World Example
-- Description of a real-world scenario demonstrating the rule.
+- Attempt to expose harmful adult content to a user under 18.
 
 ### Enforcement Mechanism
-- How the rule is enforced.
+- Instant block; automatic notification to law enforcement; account suspended.
 
 ---
 
-## 4. Rule Name
+## 4. Identity Fraud
 ### Blocking Logic
-- Description of blocking logic.
+- Detects impersonation of another user or entity in transactions or communications.
 
 ### Detection Function
-- Code or pseudocode for detection.
+```javascript
+function detectIdentityFraud(claimedId, verifiedId) {
+    return claimedId !== verifiedId;
+}
+```
 
 ### Real-World Example
-- Description of a real-world scenario demonstrating the rule.
+- A user submits transactions claiming to be a different account holder.
 
 ### Enforcement Mechanism
-- How the rule is enforced.
+- Transaction blocked; account flagged; security team alerted.
 
 ---
 
-## 5. Rule Name
+## 5. Algorithmic Discrimination
 ### Blocking Logic
-- Description of blocking logic.
+- Flags decision-making algorithms that produce systematically biased outcomes against protected classes.
 
 ### Detection Function
-- Code or pseudocode for detection.
+```javascript
+function detectAlgorithmicDiscrimination(outcomes, protectedAttribute) {
+    const disparityThreshold = 0.2;
+    const rates = groupOutcomeRates(outcomes, protectedAttribute);
+    return Math.max(...rates) - Math.min(...rates) > disparityThreshold;
+}
+```
 
 ### Real-World Example
-- Description of a real-world scenario demonstrating the rule.
+- A hiring algorithm rejects candidates from a specific demographic at significantly higher rates.
 
 ### Enforcement Mechanism
-- How the rule is enforced.
+- Algorithm paused; disparity report generated; human review required before reactivation.
 
 ---
 
-## 6. Rule Name
+## 6. Financial Coercion
 ### Blocking Logic
-- Description of blocking logic.
+- Detects patterns of forced or coerced financial transactions under duress.
 
 ### Detection Function
-- Code or pseudocode for detection.
+```javascript
+function detectFinancialCoercion(transactionPattern, duressFlag) {
+    return duressFlag || transactionPattern.isAbnormal;
+}
+```
 
 ### Real-World Example
-- Description of a real-world scenario demonstrating the rule.
+- Repeated large transfers from a compromised account under external pressure.
 
 ### Enforcement Mechanism
-- How the rule is enforced.
+- Transfers flagged; account temporarily frozen; user contacted for verification.
 
 ---
 
-## 7. Rule Name
+## 7. Platform Monopoly Abuse
 ### Blocking Logic
-- Description of blocking logic.
+- Identifies anti-competitive behavior that restricts user choice or suppresses alternatives.
 
 ### Detection Function
-- Code or pseudocode for detection.
+```javascript
+function detectMonopolyAbuse(marketSharePercent, exclusiveContracts) {
+    return marketSharePercent > 80 && exclusiveContracts.length > 0;
+}
+```
 
 ### Real-World Example
-- Description of a real-world scenario demonstrating the rule.
+- A platform requiring vendors to use only its payment processor under penalty of de-listing.
 
 ### Enforcement Mechanism
-- How the rule is enforced.
+- Contracts reviewed; compliance report filed; platform practices audited.
 
 ---
 
-## 8. Rule Name
+## 8. Surveillance Without Consent
 ### Blocking Logic
-- Description of blocking logic.
+- Blocks monitoring or tracking of users who have not provided explicit consent.
 
 ### Detection Function
-- Code or pseudocode for detection.
+```javascript
+function detectUnconsentedSurveillance(trackingEnabled, consentGiven) {
+    return trackingEnabled && !consentGiven;
+}
+```
 
 ### Real-World Example
-- Description of a real-world scenario demonstrating the rule.
+- A device monitoring user location 24/7 without a clear consent prompt.
 
 ### Enforcement Mechanism
-- How the rule is enforced.
+- Tracking disabled; user notified; consent re-requested with full disclosure.
 
 ---
 
-## 9. Rule Name
+## 9. Environmental Harm
 ### Blocking Logic
-- Description of blocking logic.
+- Detects operations that exceed agreed environmental compliance thresholds.
 
 ### Detection Function
-- Code or pseudocode for detection.
+```javascript
+function detectEnvironmentalHarm(emissions, legalLimit) {
+    return emissions > legalLimit;
+}
+```
 
 ### Real-World Example
-- Description of a real-world scenario demonstrating the rule.
+- Industrial system exceeds carbon emission caps defined in environmental compliance settings.
 
 ### Enforcement Mechanism
-- How the rule is enforced.
+- Operation throttled; environmental report generated; regulatory notification queued.
 
 ---
 
-## 10. Rule Name
+## 10. Intellectual Property Theft
 ### Blocking Logic
-- Description of blocking logic.
+- Flags use of creative or technical assets without proper licensing or attribution.
 
 ### Detection Function
-- Code or pseudocode for detection.
+```javascript
+function detectIPTheft(assetId, licensedAssets) {
+    return !licensedAssets.includes(assetId);
+}
+```
 
 ### Real-World Example
-- Description of a real-world scenario demonstrating the rule.
+- Deploying proprietary software code without a valid license key.
 
 ### Enforcement Mechanism
-- How the rule is enforced.
+- Asset use suspended; IP owner notified; legal review initiated.
 
 ---
 
-## 11. Rule Name
+## 11. Medical Data Misuse
 ### Blocking Logic
-- Description of blocking logic.
+- Prevents use of personal health data outside of its consented medical purpose.
 
 ### Detection Function
-- Code or pseudocode for detection.
+```javascript
+function detectMedicalDataMisuse(purpose, consentedPurposes) {
+    return !consentedPurposes.includes(purpose);
+}
+```
 
 ### Real-World Example
-- Description of a real-world scenario demonstrating the rule.
+- Health app sharing diagnostic data with insurers without patient consent.
 
 ### Enforcement Mechanism
-- How the rule is enforced.
+- Data sharing blocked; patient notified; compliance violation logged.
 
 ---
 
-## 12. Rule Name
+## 12. Predatory Lending
 ### Blocking Logic
-- Description of blocking logic.
+- Identifies loan offers with interest rates or terms designed to trap borrowers.
 
 ### Detection Function
-- Code or pseudocode for detection.
+```javascript
+function detectPredatoryLending(apr, maxLegalAPR, hiddenFees) {
+    return apr > maxLegalAPR || hiddenFees > 0;
+}
+```
 
 ### Real-World Example
-- Description of a real-world scenario demonstrating the rule.
+- A microloan with 400% APR offered to a low-income user with obscured fee disclosures.
 
 ### Enforcement Mechanism
-- How the rule is enforced.
+- Loan offer blocked; user directed to compliant alternatives; lender flagged.
 
 ---
 
-## 13. Rule Name
+## 13. Doxxing
 ### Blocking Logic
-- Description of blocking logic.
+- Prevents publishing or broadcasting private identifying information without consent.
 
 ### Detection Function
-- Code or pseudocode for detection.
+```javascript
+function detectDoxxing(content, privateInfoPatterns) {
+    return privateInfoPatterns.some(pattern => pattern.test(content));
+}
+```
 
 ### Real-World Example
-- Description of a real-world scenario demonstrating the rule.
+- Posting someone's home address, phone number, and employer on a public forum.
 
 ### Enforcement Mechanism
-- How the rule is enforced.
+- Post removed immediately; publisher banned; affected user notified and protected.
 
 ---
 
-## 14. Rule Name
+## 14. Emotional Manipulation
 ### Blocking Logic
-- Description of blocking logic.
+- Detects engineered content or UX patterns designed to exploit psychological vulnerabilities.
 
 ### Detection Function
-- Code or pseudocode for detection.
+```javascript
+function detectEmotionalManipulation(contentFlags, userVulnerabilityScore) {
+    return contentFlags.hasManipulativePatterns && userVulnerabilityScore > 7;
+}
+```
 
 ### Real-World Example
-- Description of a real-world scenario demonstrating the rule.
+- Dark-pattern interfaces guilt-tripping users into paid upgrades they do not need.
 
 ### Enforcement Mechanism
-- How the rule is enforced.
+- Manipulative UI element disabled; UX review flagged; design team notified.
 
 ---
 
-## 15. Rule Name
+## 15. Account Takeover
 ### Blocking Logic
-- Description of blocking logic.
+- Detects unauthorized access to accounts via compromised credentials or brute force.
 
 ### Detection Function
-- Code or pseudocode for detection.
+```javascript
+function detectAccountTakeover(loginAttempts, locationAnomaly, deviceAnomaly) {
+    return loginAttempts > 5 || locationAnomaly || deviceAnomaly;
+}
+```
 
 ### Real-World Example
-- Description of a real-world scenario demonstrating the rule.
+- Login from a foreign IP after multiple failed attempts with outdated credentials.
 
 ### Enforcement Mechanism
-- How the rule is enforced.
+- Session terminated; account locked; user notified via backup contact.
 
 ---
 
-## 16. Rule Name
+## 16. Contractual Deception
 ### Blocking Logic
-- Description of blocking logic.
+- Flags contract terms that are deliberately obscured, misleading, or contradict verbal agreements.
 
 ### Detection Function
-- Code or pseudocode for detection.
+```javascript
+function detectContractualDeception(contractText, agreedTerms) {
+    return agreedTerms.some(term => !contractText.includes(term));
+}
+```
 
 ### Real-World Example
-- Description of a real-world scenario demonstrating the rule.
+- A terms-of-service clause burying a fee structure inconsistent with what the salesperson stated.
 
 ### Enforcement Mechanism
-- How the rule is enforced.
+- Contract flagged for legal review; user warned before signing; dispute process opened.
 
 ---
 
-## 17. Rule Name
+## 17. Labor Classification Fraud
 ### Blocking Logic
-- Description of blocking logic.
+- Identifies misclassification of employees as independent contractors to evade labor protections.
 
 ### Detection Function
-- Code or pseudocode for detection.
+```javascript
+function detectClassificationFraud(controlLevel, benefitsProvided, workExclusivity) {
+    return controlLevel === 'high' && !benefitsProvided && workExclusivity;
+}
+```
 
 ### Real-World Example
-- Description of a real-world scenario demonstrating the rule.
+- A company directing workers' every task and schedule while classifying them as contractors.
 
 ### Enforcement Mechanism
-- How the rule is enforced.
+- Classification reviewed; back benefits calculated; labor board notification queued.
 
 ---
 
-## 18. Rule Name
+## 18. Systemic Suppression
 ### Blocking Logic
-- Description of blocking logic.
+- Detects platform-level actions that silence or shadow-ban users for political or protected-class reasons.
 
 ### Detection Function
-- Code or pseudocode for detection.
+```javascript
+function detectSystemicSuppression(reachDropPercent, policyViolation) {
+    return reachDropPercent > 80 && !policyViolation;
+}
+```
 
 ### Real-World Example
-- Description of a real-world scenario demonstrating the rule.
+- A content creator's reach drops 90% with no policy violation cited and no notice given.
 
 ### Enforcement Mechanism
-- How the rule is enforced.
+- Suppression action reversed; audit log created; creator notified with explanation.
 
 ---
 
-## 19. Rule Name
+## 19. Resource Hoarding
 ### Blocking Logic
-- Description of blocking logic.
+- Flags accumulation of critical public resources by a single entity beyond equitable thresholds.
 
 ### Detection Function
-- Code or pseudocode for detection.
+```javascript
+function detectResourceHoarding(entityShare, equitableLimit) {
+    return entityShare > equitableLimit * 2;
+}
+```
 
 ### Real-World Example
-- Description of a real-world scenario demonstrating the rule.
+- A corporation purchasing the majority of affordable housing stock in a city.
 
 ### Enforcement Mechanism
-- How the rule is enforced.
+- Resource acquisition flagged; redistribution protocol initiated; regulatory alert sent.
 
 ---
 
-## 20. Rule Name
+## 20. Negligent Security
 ### Blocking Logic
-- Description of blocking logic.
+- Identifies failure to maintain minimum security standards protecting user data.
 
 ### Detection Function
-- Code or pseudocode for detection.
+```javascript
+function detectNegligentSecurity(encryptionEnabled, lastAuditDays, knownVulnerabilities) {
+    return !encryptionEnabled || lastAuditDays > 180 || knownVulnerabilities > 0;
+}
+```
 
 ### Real-World Example
-- Description of a real-world scenario demonstrating the rule.
+- User passwords stored in plaintext with no encryption and no audit in over a year.
 
 ### Enforcement Mechanism
-- How the rule is enforced.
+- System access suspended; mandatory remediation plan required; users notified of breach risk.
 
 ---
 
-## 21. Rule Name
+## 21. Disinformation Amplification
 ### Blocking Logic
-- Description of blocking logic.
+- Detects coordinated spread of provably false information at scale.
 
 ### Detection Function
-- Code or pseudocode for detection.
+```javascript
+function detectDisinformationAmplification(contentVerified, amplificationCoordinated) {
+    return !contentVerified && amplificationCoordinated;
+}
+```
 
 ### Real-World Example
-- Description of a real-world scenario demonstrating the rule.
+- Automated bot network promoting health misinformation across multiple platforms simultaneously.
 
 ### Enforcement Mechanism
-- How the rule is enforced.
+- Content suppressed; bot accounts suspended; fact-check overlay applied to remaining posts.
 
 ---
 
-## 22. Rule Name
+## 22. Economic Exclusion
 ### Blocking Logic
-- Description of blocking logic.
+- Flags system designs or policies that structurally prevent marginalized groups from accessing economic participation.
 
 ### Detection Function
-- Code or pseudocode for detection.
+```javascript
+function detectEconomicExclusion(accessRequirements, demographicBarriers) {
+    return demographicBarriers.some(barrier => accessRequirements.includes(barrier));
+}
+```
 
 ### Real-World Example
-- Description of a real-world scenario demonstrating the rule.
+- A financial platform requiring a credit score that is statistically inaccessible to certain demographics.
 
 ### Enforcement Mechanism
-- How the rule is enforced.
+- Policy reviewed; alternative access pathway created; equity impact report generated.
